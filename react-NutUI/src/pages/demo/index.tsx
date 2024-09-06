@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { View } from "@tarojs/components";
 import { Button, TextArea, Dialog } from "@nutui/nutui-react-taro";
-import './index.scss'
+import './index.{{ cssExt }}'
 function Demo({ locale, handleSwitchLocale }) {
   const [visible, setVisible] = useState(false);
   return (
