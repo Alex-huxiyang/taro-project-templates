@@ -12,7 +12,7 @@ function App(props) {
 
   // 对应 onHide
   useDidHide(() => {})
-  return <>{props.children}</>
+  return props.children
 }
 
 export default App
