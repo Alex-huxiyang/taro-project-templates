@@ -1,31 +1,20 @@
 import React, { useState } from "react";
-import { View } from "@tarojs/components";
-import { Button, TextArea, Dialog } from "@nutui/nutui-react-taro";
-import './index.{{ cssExt }}'
-function Index({ locale, handleSwitchLocale }) {
-  const [visible, setVisible] = useState(false);
+import { ConfigProvider } from "@nutui/nutui-react-taro";
+import enUS from "../../locales/en-US";
+import zhCN from "../../locales/zh-CN";
+import Demo from "../demo";
+
+function App() {
+  const [locale, setLocale] = useState(zhCN);
+  const handleSwitchLocale = () => {
+    setLocale(locale === zhCN ? enUS : zhCN);
+  };
+
   return (
-    <View className="nutui-react-demo">
-      <View>{locale.welcome}</View>
-      <View>
-        <Button type="primary" onClick={handleSwitchLocale}>
-          {locale.button}
-        </Button>
-        <Button type="success" onClick={() => setVisible(true)}>
-          {locale.open}
-        </Button>
-        <Dialog
-          visible={visible}
-          onConfirm={() => setVisible(false)}
-          onCancel={() => setVisible(false)}
-        >
-          {locale.welcome}
-        </Dialog>
-        <TextArea disabled showCount maxLength={20} />
-      </View>
-    </View>
+    <ConfigProvider locale={locale}>
+      <Demo {...{ locale, handleSwitchLocale }} />
+    </ConfigProvider>
   );
 }
 
-export default Index;
-
+export default App;
