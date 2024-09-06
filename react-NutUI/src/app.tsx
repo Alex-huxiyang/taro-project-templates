@@ -19,7 +19,6 @@ function App(props) {
 
   // 对应 onHide
   useDidHide(() => {});
-  console.log(props.children);
   return (
     <ConfigProvider locale={locale}>
       <Index locale={locale} handleSwitchLocale={handleSwitchLocale} />
