@@ -56,6 +56,5 @@ module.exports = {
   desc: "使用 taro-hooks@2x 版本的模板",
   handler,
   basePageFiles,
-  platforms: ["React", "Preact", "Vue3"],
-  compiler: ["Webpack5"]
+  platforms: ["React", "Preact", "Vue3"]
 };
